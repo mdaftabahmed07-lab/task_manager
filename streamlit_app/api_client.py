@@ -186,13 +186,7 @@ def page_header(title: str, subtitle: str = ""):
 def sidebar_auth():
     """Render sidebar: API URL input + login/register. Returns True if logged in."""
     with st.sidebar:
-        st.markdown("### ⚙️ Settings")
-        base = st.text_input(
-            "API Base URL",
-            value=st.session_state.get("base_url", DEFAULT_BASE_URL),
-            key="base_url_input",
-        )
-        st.session_state["base_url"] = base
+        st.session_state["base_url"] = DEFAULT_BASE_URL
         st.markdown("---")
 
         if st.session_state.get("token"):
